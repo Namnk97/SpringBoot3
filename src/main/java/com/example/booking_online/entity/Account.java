@@ -8,8 +8,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import java.util.Date;
+
 @Data
-@SuperBuilder
+@Builder
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ public class Account extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long bookId;
+    private Long accountId;
 
     @Column(name = "ACCOUNT_NAME")
     private String accountName;
@@ -31,6 +33,13 @@ public class Account extends BaseEntity{
 
     @Column(name = "FULL_NAME")
     private String fullName;
-
-
+    @Builder(builderMethodName = "accountBuilder")
+    public Account(String createdBy, Date createdDate, String updatedBy, Date updatedDate, Long status, Long accountId, String accountName, String passwd, String codeUser, String fullName) {
+        super(createdBy, createdDate, updatedBy, updatedDate, status);
+        this.accountId = accountId;
+        this.accountName = accountName;
+        this.passwd = passwd;
+        this.codeUser = codeUser;
+        this.fullName = fullName;
+    }
 }

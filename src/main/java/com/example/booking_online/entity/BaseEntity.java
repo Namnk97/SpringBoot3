@@ -21,7 +21,7 @@ import java.util.Date;
 @MappedSuperclass
 @NoArgsConstructor
 @AllArgsConstructor
-@SuperBuilder
+@SuperBuilder(toBuilder = true)
 @EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity<U> implements Serializable {
 

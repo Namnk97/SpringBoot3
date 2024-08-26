@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountDTO extends BaseDTO{
 
-    private Long bookId;
+    private Long accountId;
 
     private String accountName;
 

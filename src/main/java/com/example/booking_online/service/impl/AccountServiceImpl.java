@@ -21,14 +21,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Transactional(rollbackOn = {LogicException.class, Exception.class})
-    public AccountDTO createAccount(AccountDTO dto) {
+    public AccountDTO createAccount(AccountDTO dto) throws LogicException {
         Account account = accountRepository.save(Account
-                .builder()
+                .accountBuilder()
                 .accountName(dto.getAccountName())
                 .passwd(dto.getPasswd())
                 .codeUser(dto.getCodeUser())
                 .status(1L)
                 .build());
-        return BaseMapperService.map(account,AccountDTO.class);
+        return BaseMapperService.map(account, AccountDTO.class);
     }
 }
