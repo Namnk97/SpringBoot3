@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 public class LogicException extends Exception{
     private String errorCode;
     private String description;
+    private String code;
 
 //    public LogicException(String errorCode) {
 //        if (null == errorCode || "".equals(errorCode)) {
