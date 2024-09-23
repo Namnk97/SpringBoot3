@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   stages {
-    stage('build') {
+    stage('clone') {
       steps {
         git branch: 'main', url: 'https://github.com/Namnk97/SpringBoot3.git'
       }
