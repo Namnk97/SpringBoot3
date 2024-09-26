@@ -31,5 +31,5 @@ public class AccountServiceImpl implements AccountService {
                 .build());
         return BaseMapperService.map(account, AccountDTO.class);
     }
-    //Check check alo123
+    //Check check
 }
